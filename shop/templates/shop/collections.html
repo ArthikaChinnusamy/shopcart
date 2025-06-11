@@ -19,31 +19,30 @@ ShopCart | Online Shopping
         </div>
     </section>
 
-    <section class="bg-light py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="mb-3">Catagories</div>
-                    <hr style="border-color: #b8bfc2;">
-                    {% include 'shop/inc/msg.html' %}
-                </div>
-                <!-- {{catagory}} -->
-                {%  for i in catagory%}
-                <div class="col-md-4 col-lg-3">
-                    <div class="card my-3">
-                        {% load static %}
-                            <img src="{% static i.image %}" class="card-image-top"  alt="Catagories">
-                            <a href="{% url 'collections' i.name %}">
-                                <div class="card-body">
-                                    <h5 class="card-title text-primary">{{ i.name }}</h5>
-                                    <p class="card-text">{{ i.description }}</p>
-                                </div>
-                            </a>
-                    </div>
-                </div>
-                {% endfor %}
+  
+<section class="bg-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-3">Categories</div>
+                <hr style="border-color: #b8bfc2;">
+                {% include 'shop/inc/msg.html' %}
             </div>
-        </div>
 
-    </section>
+            {% for i in catagory %}
+            <div class="col-md-4 col-lg-3">
+                <div class="card my-3">
+                    <img src="{{ i.image.url }}" class="card-image-top" alt="Categories">
+                    <a href="{% url 'collections' i.name %}">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ i.name }}</h5>
+                            <p class="card-text">{{ i.description }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock content %}

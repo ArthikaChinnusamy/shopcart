@@ -29,7 +29,7 @@ ShopCart | Online Shopping
                 {% if products.trending %}
                 <div class="hot">hot</div>
                 {% endif %}
-                <img src="{% static products.product_image %}" class="card-image-top d-block mx-auto" alt="Catagories" style="height: 300px;">
+                <img src="{{ products.product_image.url }}" class="card-image-top d-block mx-auto" alt="Catagories" style="height: 300px;">
             </div>
             <div class="col-8 my-3">
                 <h5 class="text-success">{{products | upper }}</h5>
