@@ -3,3 +3,4 @@ pillow
 gunicorn
 whitenoise
 mysqlclient
+psycopg2-binary
